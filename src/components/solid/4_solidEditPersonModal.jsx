@@ -4,7 +4,7 @@ const EditPersonModal = (props) => {
     const [prename, setPrename] = createSignal(props.prename);
     const [surname, setSurname] = createSignal(props.surname);
     const [age, setAge] = createSignal(props.age);
-    const [city, setCity] = createSignal(props.city);
+    const [schoolClass, setSchoolClass] = createSignal(props.class);
     const [isOpen, setIsOpen] = createSignal(false);
 
     let baseUrl = 'http://localhost:3000/api/persondb'
@@ -13,7 +13,7 @@ const EditPersonModal = (props) => {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: props.id, prename: prename(), surname: surname(), age: age(), city: city() })
+            body: JSON.stringify({ id: props.id, prename: prename(), surname: surname(), age: age(), schoolClass: schoolClass() })
         };
         let data = await fetch(baseUrl, requestOptions);
         if (data.status === 200) {
@@ -26,7 +26,7 @@ const EditPersonModal = (props) => {
     }
 
     let editPerson = () =>  {
-        console.log(props.id, ": ", prename(), " " ,surname(), ", ", age(), ", ", city());
+        console.log(props.id, ": ", prename(), " " ,surname(), ", ", age(), ", ",schoolClass());
         setIsOpen(false);
         putPerson();
     }
@@ -43,8 +43,8 @@ const EditPersonModal = (props) => {
         setAge(e.target.value);
     }
 
-    let updateCity = (e) => {
-        setCity(e.target.value);
+    let updateSchoolClass = (e) => {
+        setSchoolClass(e.target.value);
     }
 
     return (
@@ -64,7 +64,7 @@ const EditPersonModal = (props) => {
                         <input type="number" class="grow" placeholder="Alter..." value={ age() } onInput =  { updateAge } />
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="text" class="grow" placeholder="Stadt..." value={ city() } onInput = {  updateCity } />
+                        <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = {  updateSchoolClass} />
                     </label>
                 </form>
                 <div class="modal-action">

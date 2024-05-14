@@ -72,17 +72,16 @@ export default function SolidPersonTableServer(props) {
            <table class="table table-zebra w-full">
                 <thead>
                     <tr class="px-6 py-3">
-                        <th>Prename</th>
-                        <th>Surname</th>
-                        <th>Age</th>
-                        <th>City</th>
-                        <th>Löschen</th>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Alter</th>
+                        <th>Klasse</th>
                     </tr>
                 </thead>
                 <tbody>    
                     { persons() && persons().filter( (person) => person.prename.toLowerCase().indexOf(filterString().toLowerCase()) >= 0 || person.surname.toLowerCase().indexOf(filterString().toLowerCase()) >= 0).map( (person) => 
                         <tr> 
-                            <th scope="row" class=" py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class=" py-4 ">
                                 { person.prename }
                             </th>
                             <td class=" py-4">
@@ -92,18 +91,16 @@ export default function SolidPersonTableServer(props) {
                                 { person.age }
                             </td>
                             <td class=" py-4">
-                                { person.city }
+                                { person.schoolClass }
                             </td>
-                            <td class=" py-4">
-                                { person.createdAt }
-                            </td>
+                           
                             <td class=" py-4">
                             <button onClick = {() => deletePerson(person.id)} class="btn btn-error btn-sm">
                                 Löschen
                             </button>
                             </td>
                             <td class=" py-4">
-                                <EditPersonModal id={person.id} prename={person.prename} surname={person.surname} age={person.age} city={person.city} refetchFunction={ refetchPerson }/> 
+                                <EditPersonModal id={person.id} prename={person.prename} surname={person.surname} age={person.age} schoolClass={person.schoolClass} refetchFunction={ refetchPerson }/> 
                             </td>
                         </tr> )
                     }

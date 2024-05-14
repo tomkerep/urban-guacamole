@@ -1,8 +1,8 @@
 import type { APIRoute } from 'astro';
 
 let persons = [
-    { id: "cd2089ff-1549-4cb2-9481-d6af69e74fe0", prename: "Lea", surname: "Huber", age: 23, city: "Weingarten"},
-    { id: "ffe8a4c7-cef2-4e71-bae1-9b1b30f9d8ce", prename: "Leon", surname: "Müller", age: 27 , city: "Ravensburg"},
+    { id: "cd2089ff-1549-4cb2-9481-d6af69e74fe0", prename: "Lea", surname: "Huber", age: 23, schoolClass: "Weingarten"},
+    { id: "ffe8a4c7-cef2-4e71-bae1-9b1b30f9d8ce", prename: "Leon", surname: "Müller", age: 27 , schoolClass: "Ravensburg"},
     { id: "c9e8d65d-eefd-4e8b-856b-7baa19e977b7", prename: "Rita", surname: "Kowalski", age: 63 , city: "Mochenwangen"},
     { id: "00f91baf-0441-4d68-aab6-4ab7fd6e0101", prename: "Alina", surname: "Schuster", age: 20 , city: "Blitzenreute"},
     { id: "5993bc6d-5ba5-481e-b1a2-de8d890e2a8b", prename: "Rudolf", surname: "Sauter", age: 87 , city: "Berg"},
@@ -33,7 +33,7 @@ export const POST: APIRoute = async({ params, request }) => {
   if ( person.hasOwnProperty("prename")
     && person.hasOwnProperty("surname")
     && person.hasOwnProperty("age")
-    && person.hasOwnProperty("city")) {
+    && person.hasOwnProperty("schoolClass")) {
       // Person speichern. 
       return new Response(JSON.stringify({
             success: "ok",

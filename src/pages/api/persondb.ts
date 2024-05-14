@@ -28,13 +28,13 @@ export const POST: APIRoute = async ({ params, request }) => {
   if ( person.hasOwnProperty("prename")
     && person.hasOwnProperty("surname")
     && person.hasOwnProperty("age")
-    && person.hasOwnProperty("city")) {
+    && person.hasOwnProperty("schoolClass")) {
       let id = uuidv4();
       let now = dayjs().unix(); 
       console.log(now);
       let db = new sqlite(dbPath);
-      let added = db.prepare("INSERT INTO Persons (id, prename, surname, age, city, createdAt, updatedAt) VALUES (?,?,?,?,?,?,?)")
-                  .run(id, person.prename, person.surname, person.age, person.city, now, now);
+      let added = db.prepare("INSERT INTO Persons (id, prename, surname, age, schoolClass, createdAt, updatedAt) VALUES (?,?,?,?,?,?,?)")
+                  .run(id, person.prename, person.surname, person.age, person.schoolClass, now, now);
       db.close();
       return new Response(JSON.stringify({
         personObject: {
@@ -65,11 +65,11 @@ export const PUT: APIRoute = async ({ params, request }) => {
     && person.hasOwnProperty("prename")
     && person.hasOwnProperty("surname")
     && person.hasOwnProperty("age")
-    && person.hasOwnProperty("city")) {
+    && person.hasOwnProperty("schoolClass")) {
       let now = dayjs().unix(); 
       let db = new sqlite(dbPath);
-      const updates = db.prepare('UPDATE Persons SET prename = ?, surname = ?, age = ?, city = ?, updatedAt = ? WHERE id = ?')
-                     .run(person.prename, person.surname, person.age, person.city, now, person.id); 
+      const updates = db.prepare('UPDATE Persons SET prename = ?, surname = ?, age = ?, schoolClass = ?, updatedAt = ? WHERE id = ?')
+                     .run(person.prename, person.surname, person.age, person.schoolClass, now, person.id); 
       db.close();
       return new Response(JSON.stringify({
         personObject: {

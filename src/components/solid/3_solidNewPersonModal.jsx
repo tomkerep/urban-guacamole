@@ -4,7 +4,7 @@ const NewPersonModal = (props) => {
     const [prename, setPrename] = createSignal("");
     const [surname, setSurname] = createSignal("");
     const [age, setAge] = createSignal("");
-    const [city, setCity] = createSignal("");
+    const [schoolClass, setSchoolClass] = createSignal("");
     const [isOpen, setIsOpen] = createSignal(false);
 
     let baseUrl = 'http://localhost:3000/api/persondb'
@@ -13,7 +13,7 @@ const NewPersonModal = (props) => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prename: prename(), surname: surname(), age: age(), city: city() })
+            body: JSON.stringify({ prename: prename(), surname: surname(), age: age(), schoolClass: schoolClass() })
         };
         let data = await fetch(baseUrl, requestOptions);
         if (data.status === 200) {
@@ -26,7 +26,7 @@ const NewPersonModal = (props) => {
     }
 
     let savePerson = () =>  {
-        console.log(prename(), " " ,surname(), ", ", age(), ", ", city());
+        console.log(prename(), " " ,surname(), ", ", age(), ", ", schoolClass());
         setIsOpen(false);
         postPerson();
     }
@@ -43,8 +43,8 @@ const NewPersonModal = (props) => {
         setAge(e.target.value);
     }
 
-    let updateCity = (e) => {
-        setCity(e.target.value);
+    let updateSchoolClass = (e) => {
+        setSchoolClass(e.target.value);
     }
 
     return (
@@ -65,7 +65,7 @@ const NewPersonModal = (props) => {
                         <input type="number" class="grow" placeholder="Alter..." value={ age() } onInput =  { updateAge } />
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="text" class="grow" placeholder="Stadt..." value={ city() } onInput = {  updateCity } />
+                        <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = {  updateSchoolClass } />
                     </label>
                 </form>
                 <div class="modal-action">

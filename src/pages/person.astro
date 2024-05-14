@@ -1,16 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
 let persons = [
-        { name: "Tom Kerep"},
-        { name: "Lena Brender"},
-        { name: "Anna Jutz"},
-        { name: "Eva Petzold"},
-        { name: "Tim Bachhäubl"},
-        { name: "Jacob Sollbach"},
-        { name: "Mira Anton"},
-        { name: "Clara Stein"},
-        { name: "Ralf Maier"},
-        { name: "Paul Karle"}
+        { prename: "Tom",surname:"Kerep", age: 22, schoolClass: "4B"},
+        { prename: "Lena",surname:"Brender", age: 22, schoolClass: "4A"},
+        { prename: "Anna",surname:"Jutz", age: 22, schoolClass: "4B"},
+        { prename: "Tom",surname:"Kerep", age: 22, schoolClass: "4B"},
+        { prename: "Lena",surname:"Brender", age: 22, schoolClass: "4A"},
+        { prename: "Anna",surname:"Jutz", age: 22, schoolClass: "4B"},
+        { prename: "Tom",surname:"Kerep", age: 22, schoolClass: "4B"},
+        { prename: "Lena",surname:"Brender", age: 22, schoolClass: "4A"},
     ]
 ---
 
@@ -27,10 +25,10 @@ let persons = [
       <tbody>
        { persons.map((person) => 
           <tr>
-            <td>{ person.name }</td>
-            <td>{ person.surname }</td>
-            <td>{ person.city }</td>
-            <td>{ person.age }</td>
+            <td>{ person.prename}</td>
+            <td>{ person.surname}</td>
+            <td>{ person.age}</td>
+            <td>{ person.schoolClass }</td>
           </tr>)}
       </tbody>
   </table>
