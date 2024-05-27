@@ -5,14 +5,16 @@ import { v4 as uuidv4 } from 'uuid';
 import dayjs from 'dayjs';
 
 
-const dbPath = path.resolve("./src/database/", 'database.db');
+const dbPath = path.resolve("./src/database/", 'urbanguacamole.db');
 console.log(dbPath);
 
 export const GET: APIRoute = async ({ params, request }) => {
+  let dbPath1 = '/Users/tom/Documents/RWU/Semester 4/Web 2/GitHub_Project/urban-guacamole/src/database/urbanguacamole.db';
+
   let db = new sqlite(dbPath);
   let personsFromDb = await db.prepare('SELECT * FROM Persons').all();
   console.log("----->", personsFromDb);
-  db.close();
+  db.close(); 
   return new Response(JSON.stringify({
       personObject: {
         persons: personsFromDb, 

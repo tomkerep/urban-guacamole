@@ -22,7 +22,7 @@
     "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.3",
     "autoprefixer": "^10.4.7",
-    "better-sqlite3": "^9.6.0",
+    "better-sqlite3": "^10.0.0",
     "canvas-confetti": "^1.5.1",
     "daisyui": "^4.10.1",
     "dayjs": "^1.11.11",

@@ -20,8 +20,10 @@ export default function SolidUiElement(props) {
     // um den text im Editfeld zu speichern, wird wieder ein State definiert. 
     // Der Parameter in createSignal ist der default Wert, der beim erstmaligen 
     // Aufruf der Komponente gesetzt wird. 
-    const [prename, setPrename] = createSignal("Lea");
+    const [prename, setPrename] = createSignal("");
     const [surname, setSurname] = createSignal("");
+    const [schoolClass, setSchoolClass] = createSignal("");
+    const [age, setAge] = createSignal("");
 
     // Der Zustand der Checkbox wird in dem Signal checked gespeichert. 
     const [checked, setChecked] = createSignal(true);
@@ -35,6 +37,18 @@ export default function SolidUiElement(props) {
     let surnameChanged = (e) => {
         let editFieldText = e.target.value; 
         setSurname(editFieldText)
+    }
+
+    let schoolClassChanged= (e) => {
+        let editFieldText = e.target.value; 
+        console.log("editFieldText: ", editFieldText)
+        setSchoolClass(editFieldText)
+    }
+
+    let ageChanged = (e) => {
+        let editFieldText = e.target.value; 
+        console.log("editFieldText: ", editFieldText)
+        setAge(editFieldText)
     }
 
 
@@ -75,6 +89,14 @@ export default function SolidUiElement(props) {
             <label class="input input-bordered flex items-center gap-2 my-2">
                 <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput = { surnameChanged } />
             </label>
+            
+            <label class="input input-bordered flex items-center gap-2 my-2">
+                <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = { schoolClassChanged } />
+            </label>
+            <label class="input input-bordered flex items-center gap-2 my-2">
+                <input type="text" class="grow" placeholder="Alter..." value={ age() } onInput = { ageChanged } />
+            </label>
+
             <p className={surname() === "Maier" ? "py-10 text-2xl text-red-800" : "py-5"} > 
                 Entered Name: { prename().toUpperCase() + " " + surname().toUpperCase()}
             </p>

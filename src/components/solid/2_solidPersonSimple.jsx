@@ -9,11 +9,10 @@ export default function SolidPersonTableServer(props) {
   let baseUrl = 'http://localhost:3000/api/persondb'
   const [filterString, setFilterString] = createSignal("");
   const [id, setId] = createSignal("");
- /* const [prename, setPrename] = createSignal("");
+  const [prename, setPrename] = createSignal("");
   const [surname, setSurname] = createSignal("");
   const [age, setAge] = createSignal("");
-  const [city, setCity] = createSignal("");
-  const [id, setId] = createSignal(""); */
+  const [schoolClass, setSchoolClass] = createSignal("");
 
 
   // Ressourcen sind für asynchrone Ereignisse konzipiert. 
