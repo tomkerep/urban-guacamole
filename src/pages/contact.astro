@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "@layouts/Layout.astro";
+import coder from "../assets/images/coder.webp"
+---
+
+<Layout title="test">
+	<div class:list={["max-w-screen-xl mx-auto px-5"]}>
+		<html lang="en">
+			<div class="grid place-items-center content-center ">
+ 	  			<p class="text-5xl font-extrabold text-blue-800 my-5">Kontakt</p>
+					<div><Image src={coder} alt="A real coder." width="400"/></div>
+				<p class="text-4xl py-5">Wir freuen uns, von Ihnen zu hören! Haben Sie Fragen, Anregungen ? Zögern Sie nicht, uns zu kontaktieren. Hier sind verschiedene Möglichkeiten, wie Sie uns erreichen können:
+
+                    E-Mail:
+                    Schreiben Sie uns eine E-Mail an educo.
+                    
+                    Telefon:
+                    Sie können uns während unserer Geschäftszeiten unter 0123456789 erreichen.
+                    
+                    Soziale Medien:
+                    Folgen Sie uns auf unseren Social-Media-Kanälen für die neuesten Updates und Nachrichten: educo.info</p>
+			</div>
+		</html>
+	</div>
+</Layout>
