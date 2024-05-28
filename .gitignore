@@ -1,0 +1,5 @@
+node_modules
+public/javascripts/*
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+.vscode
