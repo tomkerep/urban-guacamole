@@ -5,7 +5,7 @@ module.exports = {
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],	
 	daisyui: {
-		themes: ["light",
+		themes: ["bumblebee",
 			/*{
 			  light: {
 				...require("daisyui/src/theming/themes")["light"],
@@ -13,7 +13,7 @@ module.exports = {
 				secondary: "teal",
 			  },
 			},*/
-		   "dark", "cupcake", "fantasy"],
+		   ],
 	},
 
 };

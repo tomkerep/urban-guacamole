@@ -73,7 +73,7 @@ export default function SolidPersonTableServer(props) {
                     <tr class="px-6 py-3">
                         <th>Vorname</th>
                         <th>Nachname</th>
-                        <th>Alter</th>
+                        <th>Geburtsdatum</th>
                         <th>Klasse</th>
                     </tr>
                 </thead>
@@ -92,15 +92,15 @@ export default function SolidPersonTableServer(props) {
                             <td class=" py-4">
                                 { person.schoolClass }
                             </td>
-                           
                             <td class=" py-4">
-                            <button onClick = {() => deletePerson(person.id)} class="btn btn-error btn-sm">
+                                <EditPersonModal  id={person.id} prename={person.prename} surname={person.surname} age={person.age} schoolClass={person.schoolClass} refetchFunction={ refetchPerson }/> 
+                            </td>
+                            <td class=" py-4">
+                            <button onClick = {() => deletePerson(person.id)} class="btn btn-sm">
                                 Löschen
                             </button>
                             </td>
-                            <td class=" py-4">
-                                <EditPersonModal id={person.id} prename={person.prename} surname={person.surname} age={person.age} schoolClass={person.schoolClass} refetchFunction={ refetchPerson }/> 
-                            </td>
+                            
                         </tr> )
                     }
                 </tbody>

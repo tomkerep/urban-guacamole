@@ -49,7 +49,7 @@ const NewPersonModal = (props) => {
 
     return (
         <div>
-            <button class="btn my-5" onClick={() => setIsOpen(true)}>Neue Person anlegen</button>
+            <button class="btn btn-accent my-5" onClick={() => setIsOpen(true)}>Neue Person anlegen</button>
             <div class={isOpen() ? "modal modal-open" : "modal"}>
                 <div class="modal-box">
                 <h3 class="font-bold text-lg">Neue Person hinzufügen.</h3>
@@ -62,7 +62,7 @@ const NewPersonModal = (props) => {
                         <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput =  { updateSurname } />
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="number" class="grow" placeholder="Alter..." value={ age() } onInput =  { updateAge } />
+                        <input type="date" class="grow" placeholder="" value={ age() } onInput =  { updateAge } />
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
                         <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = {  updateSchoolClass } />

@@ -49,7 +49,7 @@ const EditPersonModal = (props) => {
 
     return (
         <div>
-            <button class="btn btn-sm" onClick={() => setIsOpen(true)}>Person editieren</button>
+            <button class="btn btn-accent btn-sm" onClick={() => setIsOpen(true)}>Bearbeiten</button>
             <div class={isOpen() ? "modal modal-open" : "modal"}>
                 <div class="modal-box">
                 <p class="py-4">Bitte Daten eingeben</p>
@@ -61,7 +61,7 @@ const EditPersonModal = (props) => {
                         <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput =  { updateSurname } />
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="number" class="grow" placeholder="Alter..." value={ age() } onInput =  { updateAge } />
+                        <input type="date" class="grow" placeholder="" value={ age() } onInput =  { updateAge } /> 
                     </label>
                     <label class="input input-bordered flex items-center gap-2 my-2">
                         <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = {  updateSchoolClass} />

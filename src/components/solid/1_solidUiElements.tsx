@@ -39,17 +39,19 @@ export default function SolidUiElement(props) {
         setSurname(editFieldText)
     }
 
+    let ageChanged = (e) => {
+        let editFieldText = e.target.value; 
+        console.log("editFieldText: ", editFieldText)
+        setAge(editFieldText)
+    }
+
     let schoolClassChanged= (e) => {
         let editFieldText = e.target.value; 
         console.log("editFieldText: ", editFieldText)
         setSchoolClass(editFieldText)
     }
 
-    let ageChanged = (e) => {
-        let editFieldText = e.target.value; 
-        console.log("editFieldText: ", editFieldText)
-        setAge(editFieldText)
-    }
+  
 
 
     return (
@@ -89,20 +91,13 @@ export default function SolidUiElement(props) {
             <label class="input input-bordered flex items-center gap-2 my-2">
                 <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput = { surnameChanged } />
             </label>
-            
+            <label class="input input-bordered flex items-center gap-2 my-2">
+                <input type="date" class="grow" placeholder="" value={ age() } onInput = { ageChanged } />
+            </label>
             <label class="input input-bordered flex items-center gap-2 my-2">
                 <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = { schoolClassChanged } />
             </label>
-            <label class="input input-bordered flex items-center gap-2 my-2">
-                <input type="text" class="grow" placeholder="Alter..." value={ age() } onInput = { ageChanged } />
-            </label>
-
-            <p className={surname() === "Maier" ? "py-10 text-2xl text-red-800" : "py-5"} > 
-                Entered Name: { prename().toUpperCase() + " " + surname().toUpperCase()}
-            </p>
-            <p className="py-5">
-                Ist es Lena? { prename() === 'Lena' ? "ja" : "nein"}
-            </p>
+           
             <div class="divider"></div> 
             <div class="flex items-center mb-4">
                 <input id="default-checkbox" type="checkbox" checked={ checked() } onChange={(e) => {setChecked(e.currentTarget.checked)}} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></input>
