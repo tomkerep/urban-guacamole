@@ -58,7 +58,7 @@ export default function SolidPersonTableServer(props) {
 
    return (
     <div>
-           <h1 class="text-3xl my-5 font-bold">Jahrgang 4</h1>
+           <h1 class="text-3xl my-5 font-bold">Übersicht</h1>
            <div>
             <input onInput = { (e) => setFilterString(e.target.value) } 
                    type="text" 
