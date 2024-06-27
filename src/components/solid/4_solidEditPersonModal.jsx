@@ -9,7 +9,7 @@ const EditPersonModal = (props) => {
 
     let baseUrl = 'http://localhost:3000/api/persondb'
 
-    const putPerson = async() => {
+    const putPerson = async () => {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -17,7 +17,7 @@ const EditPersonModal = (props) => {
         };
         let data = await fetch(baseUrl, requestOptions);
         if (data.status === 200) {
-            let json = await data.json(); 
+            let json = await data.json();
             console.log(json);
             props.refetchFunction();
         } else {
@@ -25,8 +25,8 @@ const EditPersonModal = (props) => {
         }
     }
 
-    let editPerson = () =>  {
-        console.log(props.id, ": ", prename(), " " ,surname(), ", ", age(), ", ",schoolClass());
+    let editPerson = () => {
+        console.log(props.id, ": ", prename(), " ", surname(), ", ", age(), ", ", schoolClass());
         setIsOpen(false);
         putPerson();
     }
@@ -52,27 +52,27 @@ const EditPersonModal = (props) => {
             <button class="btn btn-accent btn-sm" onClick={() => setIsOpen(true)}>Bearbeiten</button>
             <div class={isOpen() ? "modal modal-open" : "modal"}>
                 <div class="modal-box">
-                <p class="py-4">Bitte Daten eingeben</p>
-                <form method="dialog">
-                    <label class="input input-bordered flex items-center gap-2">
-                        <input type="text" class="grow" placeholder="Vorname..." value={ prename() } onInput = {  updatePrename  }/>
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput =  { updateSurname } />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="date" class="grow" placeholder="" value={ age() } onInput =  { updateAge } /> 
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2 my-2">
-                        <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = {  updateSchoolClass} />
-                    </label>
-                </form>
-                <div class="modal-action">
-                    <button class="btn" onClick={() => setIsOpen(false)}>Close</button>
-                    <button class="btn" onClick={() => editPerson()}>Speichern</button> 
-                </div>  
+                    <p class="py-4">Bitte Daten eingeben</p>
+                    <form method="dialog">
+                        <label class="input input-bordered flex items-center gap-2">
+                            <input type="text" class="grow" placeholder="Vorname..." value={prename()} onInput={updatePrename} />
+                        </label>
+                        <label class="input input-bordered flex items-center gap-2 my-2">
+                            <input type="text" class="grow" placeholder="Nachname..." value={surname()} onInput={updateSurname} />
+                        </label>
+                        <label class="input input-bordered flex items-center gap-2 my-2">
+                            <input type="date" class="grow" placeholder="" value={age()} onInput={updateAge} />
+                        </label>
+                        <label class="input input-bordered flex items-center gap-2 my-2">
+                            <input type="text" class="grow" placeholder="Klasse..." value={schoolClass()} onInput={updateSchoolClass} />
+                        </label>
+                    </form>
+                    <div class="modal-action">
+                        <button class="btn" onClick={() => setIsOpen(false)}>Schließen</button>
+                        <button class="btn btn-accent" onClick={() => editPerson()}>Speichern</button>
+                    </div>
+                </div>
             </div>
-            </div> 
         </div>
     )
 };

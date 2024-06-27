@@ -26,6 +26,7 @@
     "canvas-confetti": "^1.5.1",
     "daisyui": "^4.10.1",
     "dayjs": "^1.11.11",
+    "moment": "^2.30.1",
     "nodes": "^0.1.0",
     "path": "^0.12.7",
     "postcss": "^8.4.14",

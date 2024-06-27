@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import SolidTaskSimple from "@components/solid/SolidTaskSimple.jsx";
+import { formattedDate } from "@layouts/DateDisplay.astro";
 
 ---
 
@@ -8,6 +9,6 @@ import SolidTaskSimple from "@components/solid/SolidTaskSimple.jsx";
   <section>
     {/* WICHTIG: Um die Komponente im Client (Browser) nutzen zu können, muss diese 
                  an den Browser geschickt werden. Dies wird durch client:load ermöglicht.  */}
-    <SolidTaskSimple client:load />
+    <SolidTaskSimple client:load date={formattedDate} />
   </section>
 </Layout>

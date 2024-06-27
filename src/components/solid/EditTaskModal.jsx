@@ -64,14 +64,11 @@ const EditTaskModal = (props) => {
                         <label class="input input-bordered flex items-center gap-2 my-2">
                             <input type="text" class="grow" placeholder="Kommentar..." value={kommentar()} onInput={updateKommentar} />
                         </label>
-                        <label class="input input-bordered flex items-center gap-2 my-2">
-                            <input type="checkbox" class="checkbox" checked={status()} onInput={updateStatus} /> Erledigt
-                        </label>
                         
                     </form>
                     <div class="modal-action">
-                        <button class="btn" onClick={() => setIsOpen(false)}>Close</button>
-                        <button class="btn" onClick={() => saveTask()}>Speichern</button>
+                        <button class="btn" onClick={() => setIsOpen(false)}>Schließen</button>
+                        <button class="btn btn-accent" onClick={() => saveTask()}>Speichern</button>
                     </div>
                 </div>
             </div>

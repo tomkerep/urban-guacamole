@@ -29,29 +29,29 @@ export default function SolidUiElement(props) {
     const [checked, setChecked] = createSignal(true);
 
     let prenameChanged = (e) => {
-        let editFieldText = e.target.value; 
+        let editFieldText = e.target.value;
         console.log("editFieldText: ", editFieldText)
         setPrename(editFieldText)
     }
 
     let surnameChanged = (e) => {
-        let editFieldText = e.target.value; 
+        let editFieldText = e.target.value;
         setSurname(editFieldText)
     }
 
     let ageChanged = (e) => {
-        let editFieldText = e.target.value; 
+        let editFieldText = e.target.value;
         console.log("editFieldText: ", editFieldText)
         setAge(editFieldText)
     }
 
-    let schoolClassChanged= (e) => {
-        let editFieldText = e.target.value; 
+    let schoolClassChanged = (e) => {
+        let editFieldText = e.target.value;
         console.log("editFieldText: ", editFieldText)
         setSchoolClass(editFieldText)
     }
 
-  
+
 
 
     return (
@@ -59,14 +59,14 @@ export default function SolidUiElement(props) {
             <h1 class="text-4xl">Solid</h1>
             <p class="text-lg">Diese Komponente läuft im Browser.</p>
             <div class="join">
-                <button class="btn join-item btn-secondary" onClick={ () => { setNoClicks( noClicks() - 1)}}>
-                    Down 
+                <button class="btn join-item btn-secondary" onClick={() => { setNoClicks(noClicks() - 1) }}>
+                    Down
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
                     </svg>
                 </button>
-                <button class="btn join-item btn-primary" onClick={ () => { setNoClicks( noClicks() + 1)}}>
-                    Up 
+                <button class="btn join-item btn-primary" onClick={() => { setNoClicks(noClicks() + 1) }}>
+                    Up
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
                     </svg>
@@ -81,32 +81,32 @@ export default function SolidUiElement(props) {
                 } 
             }
             */}
-            <p className={ noClicks() < 0 ? "text-xl text-red-800" : "text-xl text-green-800"}>
-                Number of Clicks: <b>{ noClicks() }</b>
+            <p className={noClicks() < 0 ? "text-xl text-red-800" : "text-xl text-green-800"}>
+                Number of Clicks: <b>{noClicks()}</b>
             </p>
-            <div class="divider"></div> 
+            <div class="divider"></div>
             <label class="input input-bordered flex items-center gap-2">
-                <input type="text" class="grow" placeholder="Vorname..." value={ prename() } onInput = { prenameChanged }/>
+                <input type="text" class="grow" placeholder="Vorname..." value={prename()} onInput={prenameChanged} />
             </label>
             <label class="input input-bordered flex items-center gap-2 my-2">
-                <input type="text" class="grow" placeholder="Nachname..." value={ surname() } onInput = { surnameChanged } />
+                <input type="text" class="grow" placeholder="Nachname..." value={surname()} onInput={surnameChanged} />
             </label>
             <label class="input input-bordered flex items-center gap-2 my-2">
-                <input type="date" class="grow" placeholder="" value={ age() } onInput = { ageChanged } />
+                <input type="date" class="grow" placeholder="" value={age()} onInput={ageChanged} />
             </label>
             <label class="input input-bordered flex items-center gap-2 my-2">
-                <input type="text" class="grow" placeholder="Klasse..." value={ schoolClass() } onInput = { schoolClassChanged } />
+                <input type="text" class="grow" placeholder="Klasse..." value={schoolClass()} onInput={schoolClassChanged} />
             </label>
-           
-            <div class="divider"></div> 
+
+            <div class="divider"></div>
             <div class="flex items-center mb-4">
-                <input id="default-checkbox" type="checkbox" checked={ checked() } onChange={(e) => {setChecked(e.currentTarget.checked)}} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></input>
+                <input id="default-checkbox" type="checkbox" checked={checked()} onChange={(e) => { setChecked(e.currentTarget.checked) }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></input>
                 <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bitte auswählen</label>
             </div>
 
             <p>
-                Aktiviert: { checked() ? "Ja" : "Nein" }
+                Aktiviert: {checked() ? "Ja" : "Nein"}
             </p>
         </div>
-    )  
+    )
 }

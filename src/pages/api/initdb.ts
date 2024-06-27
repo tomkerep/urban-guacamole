@@ -41,6 +41,25 @@ export const GET: APIRoute = ({ params, request }) => {
   `);
   console.log(resultTasks);
 
+  // Create MedicalRecords table if it doesn't exist
+  let resultMedical = db.exec(`
+    CREATE TABLE IF NOT EXISTS Medical (
+      'id' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+      'personId' TEXT NOT NULL,
+      'address' TEXT NOT NULL DEFAULT '',
+      'allergies' TEXT NOT NULL DEFAULT '',
+      'bloodType' TEXT NOT NULL DEFAULT '',
+      'medicalConditions' TEXT NOT NULL DEFAULT '',
+      'medicine' TEXT  NOT NULL DEFAULT '',
+      'emergencyContact' TEXT NOT NULL DEFAULT '',
+      'phoneNumber' TEXT NOT NULL DEFAULT '',
+      'comments' TEXT NOT NULL DEFAULT '',
+      'createdAt' INT NOT NULL DEFAULT 0,
+      'updatedAt' INT NOT NULL DEFAULT 0
+    )
+  `);
+  console.log(resultMedical);
+
   db.close();
   return new Response(
     JSON.stringify({ success: "ok", errorMessage: "Database initialized" })

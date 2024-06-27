@@ -1,8 +1,20 @@
 import { createSignal, createResource } from "solid-js";
 import NewTaskModal from "@solid/NewTaskModal";
 import EditTaskModal from "@solid/EditTaskModal";
+import date from "@layouts/DateDisplay.astro";
+
 
 export default function SolidTaskSimple(props) {
+    // Funktion zum Formatieren des Datums
+    const formatDate = () => {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, '0');
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+      const year = today.getFullYear();
+      return `${day}.${month}.${year}`;
+    };
+    
+
   let baseUrl = 'http://localhost:3000/api/taskdb';
   const [filterString, setFilterString] = createSignal("");
 
@@ -34,7 +46,8 @@ export default function SolidTaskSimple(props) {
 
   return (
     <div>
-      <h1 class="text-3xl my-5 font-bold">Aufgaben Übersicht</h1>
+      <h1 class="text-3xl mt-5 mb-2 font-bold">Aufgaben Übersicht</h1>
+      <p class="text-l mb-5 font-semibold">Heute, {formatDate()}</p>
       <div>
         <input
           onInput={(e) => setFilterString(e.target.value)}
@@ -48,12 +61,12 @@ export default function SolidTaskSimple(props) {
       <div>
         <NewTaskModal refetchFunction={refetchTasks} />
       </div>
-      <table class="table table-zebra w-full">
+      <table class="table w-full">
         <thead>
           <tr class="px-6 py-3">
             <th>Aufgaben Name</th>
             <th>Kommentar</th>
-            <th>Status</th>
+            {/* <th>Status</th> */}
           </tr>
         </thead>
         <tbody>
@@ -69,21 +82,21 @@ export default function SolidTaskSimple(props) {
               <td class="py-4">
                 {task.kommentar}
               </td>
-               <td class="py-4">
+               {/* <td class="py-4">
                 <input type="checkbox" checked={task.status} class="checkbox" />
-              </td>
-              <td class="py-4">
+              </td> */}
+              <td class="py-4" >
                 <EditTaskModal
                   taskId={task.taskId}
                   taskName={task.taskName}
                   kommentar={task.kommentar}
-                  status={task.status}
+                  //status={task.status}
                   refetchFunction={refetchTasks}
                 />
               </td>
               <td class="py-4">
-                <button onClick={() => deleteTask(task.taskId)} class="btn btn-sm">
-                  Löschen
+                <button onClick={() => deleteTask(task.taskId)} class="btn  btn-accent btn-sm">
+                  Erledigt
                 </button>
               </td>
             </tr>

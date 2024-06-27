@@ -46,7 +46,7 @@ const NewTaskModal = (props) => {
 
     return (
         <div>
-            <button class="btn btn-accent my-5" onClick={() => setIsOpen(true)}>Neue Aufgabe anlegen</button>
+            <button class="btn btn-accent my-5" onClick={() => setIsOpen(true)}>Neue Aufgabe</button>
             <div class={isOpen() ? "modal modal-open" : "modal"}>
                 <div class="modal-box">
                     <h3 class="font-bold text-lg">Neue Aufgabe hinzufügen.</h3>
@@ -60,8 +60,8 @@ const NewTaskModal = (props) => {
                         </label>
                     </form>
                     <div class="modal-action">
-                        <button class="btn" onClick={() => setIsOpen(false)}>Close</button>
-                        <button class="btn" onClick={() => saveTask()}>Speichern</button>
+                        <button class="btn" onClick={() => setIsOpen(false)}>Schließen</button>
+                        <button class="btn btn-accent" onClick={() => saveTask()}>Speichern</button>
                     </div>
                 </div>
             </div>
