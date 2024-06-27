@@ -2,25 +2,55 @@
 import { Image } from 'astro:assets';
 import Layout from "@layouts/Layout.astro";
 import coder from "../assets/images/coder.webp"
+
+
 ---
 
-<Layout title="test">
-	<div class:list={["max-w-screen-xl mx-auto px-5"]}>
-		<html lang="en">
-			<div class="grid place-items-center content-center ">
- 	  			<p class="text-5xl font-extrabold text-blue-800 my-5">Kontakt</p>
-					<div><Image src={coder} alt="A real coder." width="400"/></div>
-				<p class="text-4xl py-5">Wir freuen uns, von Ihnen zu hören! Haben Sie Fragen, Anregungen ? Zögern Sie nicht, uns zu kontaktieren. Hier sind verschiedene Möglichkeiten, wie Sie uns erreichen können:
-
-                    E-Mail:
-                    Schreiben Sie uns eine E-Mail an educo.
-                    
-                    Telefon:
-                    Sie können uns während unserer Geschäftszeiten unter 0123456789 erreichen.
-                    
-                    Soziale Medien:
-                    Folgen Sie uns auf unseren Social-Media-Kanälen für die neuesten Updates und Nachrichten: educo.info</p>
+<Layout title="Kontakt">
+	<div class="container mx-auto px-5 py-10">
+	  <div class="grid place-items-center content-center">
+		<h2 class="text-5xl font-extrabold text-center my-5">Kontakt</h2>
+		<p class="text-3xl text-center text-black py-5">
+		  Wir freuen uns, von Ihnen zu hören! Haben Sie Fragen oder Anregungen? 
+		  Zögern Sie nicht, uns zu kontaktieren. Hier sind verschiedene Möglichkeiten, wie Sie uns erreichen können:
+		</p>
+		<div class="contact-methods text-center my-5">
+		  <div class="my-5">
+			<div class="flex items-center justify-center">
+			  <button class="btn btn-info uniform-size">E-Mail: info@educo.de</button>
 			</div>
-		</html>
+		  </div>
+		  <div class="my-5">
+			<div class="flex items-center justify-center">
+			  <button class="btn btn-info uniform-size">Telefon: 0123456789</button>
+			</div>
+		  </div>
+		  <div class="my-5">
+			<div class="flex items-center justify-center">
+			  <button class="btn btn-info uniform-size">Soziale Medien: @educo.info</button>
+			</div>
+		  </div>
+		</div>
+		<div class="contact-form bg-white shadow-md rounded-lg p-8 w-full md:w-1/2 mt-10">
+		  <h3 class="text-2xl font-bold mb-6 text-center">Schreiben Sie uns</h3>
+		  <form>
+			<div class="mb-4">
+			  <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+			  <input type="text" id="name" class="form-input mt-1 block w-full" placeholder="Ihr Name" />
+			</div>
+			<div class="mb-4">
+			  <label for="email" class="block text-gray-700 font-bold mb-2">E-Mail</label>
+			  <input type="email" id="email" class="form-input mt-1 block w-full" placeholder="Ihre E-Mail-Adresse" />
+			</div>
+			<div class="mb-4">
+			  <label for="message" class="block text-gray-700 font-bold mb-2">Nachricht</label>
+			  <textarea id="message" class="form-textarea mt-1 block w-full" rows="5" placeholder="Ihre Nachricht"></textarea>
+			</div>
+			<div class="text-center">
+			  <button type="submit" class="btn btn-primary">Nachricht senden</button>
+			</div>
+		  </form>
+		</div>
+	  </div>
 	</div>
-</Layout>
+  </Layout>

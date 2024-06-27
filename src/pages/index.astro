@@ -5,14 +5,62 @@ import coder from "../assets/images/coder.webp"
 ---
 
 <Layout title="">
-	<div class:list={["max-w-screen-xl mx-auto px-5"]}>
-		<html lang="en">
-			<div class="grid place-items-center content-center ">
- 	  			<p class="text-5xl font-extrabold text-blue-800 my-5">Willkommen!</p>
-					<div><Image src={coder} alt="A real coder." width="400"/></div>
-				<p class="text-4xl py-5">Coding is so great!</p>
-			</div>
-		</html>
+	<div class="background-image">
+	  <div class="max-w-screen-xl mx-auto px-5 grid place-items-center content-center h-screen">
+		<p class="text-7xl font-extrabold text-white my-5 animate-fadeIn">EduCo.</p>
+		<p class="text-4xl text-white py-5">EduCo hilft Dir deinen Arbeitsalltag zu strukturieren. Erstelle Namenslisten und tägliche To Dos - wieso schwierig wenn es einfach geht?</p>
+	  </div>
 	</div>
-</Layout>
+	<div class="max-w-screen-xl mx-auto px-16 py-10 text-left">
+	  <h2 class="text-3xl font-bold my-5">EduCo. - Dein Alltagshelfer</h2>
+	  <p class="text-xl my-5">Willkommen bei EduCo! EduCo unterstützt dich dabei, deinen Arbeitsalltag als Erzieherin zu strukturieren und zu organisieren. Unsere benutzerfreundliche Plattform bietet dir praktische Tools, um To-Do-Listen zu erstellen und Namenslisten der Kinder zu verwalten.</p>
+	  <h3 class="text-2xl font-semibold my-5">To-Do-Listen</h3>
+	  <p class="text-lg my-5">Bleibe organisiert und produktiv. Erstelle und verwalte deine täglichen Aufgaben mühelos mit unseren To-Do-Listen. Behalte den Überblick über wichtige Aufgaben und erledige sie effizient.</p>
+	  <h3 class="text-2xl font-semibold my-5">Namenslisten</h3>
+	  <p class="text-lg my-5">Kinder im Blick behalten. Verwalte die Namenslisten der Kinder in deiner Gruppe. Füge detaillierte Informationen zu jedem Kind hinzu und rufe sie jederzeit ab. Behalte wichtige Daten wie Geburtstage, Allergien und Notfallkontakte immer griffbereit.</p>
+	  <h3 class="text-2xl font-semibold my-5">Benutzerfreundlich und sicher</h3>
+	  <p class="text-lg my-5">Einfach zu bedienen und sicher. Unsere Plattform ist intuitiv gestaltet, damit du dich schnell zurechtfindest. Deine Daten sind bei uns sicher und geschützt.</p>
+	</div>
+	<div class="button-container">
+		<button class="btn btn-primary my-2">To Do Liste erstellen</button>
+		<button class="btn btn-secondary my-2">Namensliste erstellen</button>
+	  </div>
+
+	  <!-- Erfahrungsberichte Section -->
+	  <div class="testimonials-container max-w-screen-xl mx-auto px-5 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+		<div class="testimonial bg-white p-6 rounded-lg shadow-md">
+		  <img src="/public/images/Portrait3.jpg" alt="Anna M." class="testimonial-img rounded-full w-16 h-16 mb-4 mx-auto">
+		  <p class="text-lg text-gray-700">"EduCo hat meinen Arbeitsalltag leichter gemacht! Ich kann jetzt alles effizienter und organisierter managen."</p>
+		  <div class="testimonial-details mt-4">
+			<p class="font-bold text-gray-900">Anna M.</p>
+			<p class="text-gray-600">Erzieherin</p>
+			<div class="stars mt-2">
+			  ⭐⭐⭐⭐⭐
+			</div>
+		  </div>
+		</div>
+		<div class="testimonial bg-white p-6 rounded-lg shadow-md">
+		  <img src="/public/images/Portrait2.jpg" alt="Beate K." class="testimonial-img rounded-full w-16 h-16 mb-4 mx-auto">
+		  <p class="text-lg text-gray-700">"Die Namenslisten-Funktion ist ein Lebensretter! Ich habe alle Informationen zu den Kindern auf einen Blick."</p>
+		  <div class="testimonial-details mt-4">
+			<p class="font-bold text-gray-900">Beate K.</p>
+			<p class="text-gray-600">Erzieherin</p>
+			<div class="stars mt-2">
+			  ⭐⭐⭐⭐
+			</div>
+		  </div>
+		</div>
+	  <div class="testimonial bg-white p-6 rounded-lg shadow-md">
+		  <img src="/public/images/Portrait1.jpg" alt="Clara L." class="testimonial-img rounded-full w-16 h-16 mb-4 mx-auto">
+		  <p class="text-lg text-gray-700">"Dank EduCo kann ich meine täglichen Aufgaben viel einfacher verwalten. Es spart mir so viel Zeit!"</p>
+		  <div class="testimonial-details mt-4">
+			<p class="font-bold text-gray-900">Clara L.</p>
+			<p class="text-gray-600">Erzieherin</p>
+			<div class="stars mt-2">
+			  ⭐⭐⭐⭐⭐
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</Layout>
 
